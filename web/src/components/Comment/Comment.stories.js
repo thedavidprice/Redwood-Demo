@@ -2,7 +2,7 @@ import Comment from './Comment'
 
 export const generated = () => {
   return (
-    <div className="">
+    <div className="m-8">
       <Comment
         comment={{
           name: 'Rob Cameron',
