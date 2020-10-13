@@ -1,4 +1,5 @@
 import BlogPost from './BlogPost'
+import { standard as comments } from 'src/components/CommentsCell/CommentsCell.mock'
 
 const POST = {
   id: 1,
@@ -12,6 +13,8 @@ const POST = {
 }
 
 export const full = () => {
+  mockGraphQLQuery('CommentsQuery', () => comments())
+
   return <BlogPost post={POST} />
 }
 
