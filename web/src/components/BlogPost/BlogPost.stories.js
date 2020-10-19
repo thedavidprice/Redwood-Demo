@@ -9,6 +9,7 @@ const POST = {
          loko semiotics kitsch forage chambray. Semiotics salvia selfies jianbing
          hella shaman. Letterpress helvetica vaporware cronut, shaman butcher
          YOLO poke fixie hoodie gentrify woke heirloom.`,
+  createdAt: '2020-01-01T12:34:56Z',
 }
 
 export const full = () => {
