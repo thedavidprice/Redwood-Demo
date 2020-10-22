@@ -28,7 +28,7 @@ describe('BlogPostsCell', () => {
       const regex = new RegExp(`${truncatedBody}.*?\.{3}`)
 
       expect(screen.getByText(post.title)).toBeInTheDocument()
-      expect(() => screen.getByText(post.body)).toThrowError()
+      expect(screen.queryByText(post.body)).not.toBeInTheDocument()
       expect(screen.getByText(regex)).toBeInTheDocument()
     })
   })
