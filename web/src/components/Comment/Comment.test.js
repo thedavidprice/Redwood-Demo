@@ -9,13 +9,14 @@ describe('Comment', () => {
       body: 'This is my comment',
       createdAt: '2020-01-02T12:34:56Z',
     }
-
-    const { container } = render(<Comment comment={comment} />)
+    render(<Comment comment={comment} />)
 
     expect(screen.getByText(comment.name)).toBeInTheDocument()
     expect(screen.getByText(comment.body)).toBeInTheDocument()
-    expect(
-      container.querySelector(`time[datetime="${comment.createdAt}"]`)
-    ).toBeInTheDocument()
+
+    const dateElement = screen.getByText('2 January 2020')
+    expect(dateElement).toBeInTheDocument()
+    expect(dateElement.nodeName).toEqual('TIME')
+    expect(dateElement).toHaveAttribute('datetime', comment.createdAt)
   })
 })
