@@ -4,23 +4,26 @@ import { standard } from './CommentsCell.mock'
 
 describe('CommentsCell', () => {
   test('Loading renders successfully', () => {
-    render(<Loading />)
-    // Use screen.debug() to see output
-    expect(screen.getByText('Loading...')).toBeInTheDocument()
+    expect(() => {
+      render(<Loading />)
+    }).not.toThrow()
   })
 
   test('Empty renders successfully', async () => {
-    render(<Empty />)
-    expect(screen.getByText('Empty')).toBeInTheDocument()
+    expect(() => {
+      render(<Empty />)
+    }).not.toThrow()
   })
 
   test('Failure renders successfully', async () => {
-    render(<Failure error={new Error('Oh no')} />)
-    expect(screen.getByText(/Oh no/i)).toBeInTheDocument()
+    expect(() => {
+      render(<Failure error={new Error('Oh no')} />)
+    }).not.toThrow()
   })
 
   test('Success renders successfully', async () => {
-    render(<Success comments={standard().comments} />)
-    // expect(screen.getByText(/42/i)).toBeInTheDocument()
+    expect(() => {
+      render(<Success comments={standard().comments} />)
+    }).not.toThrow()
   })
 })
