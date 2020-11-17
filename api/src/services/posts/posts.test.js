@@ -1,27 +1,23 @@
-import { posts } from './posts'
-
-const { createFixtures, clearFixtures } = require('src/lib/test_helper')
-
-export const FIXTURES = [
-  {
-    title: 'Test',
-    body: 'Test',
-  },
-]
+import { posts, post, createPost } from './posts'
 
 describe('posts', () => {
-  beforeEach(async () => {
-    await createFixtures('post', FIXTURES)
-  })
-
-  afterEach(async () => {
-    await clearFixtures('post')
-  })
-
-  it('returns a list of posts', async () => {
+  scenario('returns a list of posts', async (scenario) => {
     const list = await posts()
 
-    expect(list.length).toEqual(FIXTURES.length)
-    expect(list[0]).toEqual(expect.objectContaining(FIXTURES[0]))
+    expect(list.length).toEqual(Object.keys(scenario.post).length)
+    expect(list[0].title).toEqual(scenario.post.first.title)
+  })
+
+  scenario('withLongBody', 'returns a list of posts', async (scenario) => {
+    const list = await posts()
+
+    expect(list.length).toEqual(Object.keys(scenario.post).length)
+    expect(list[0].body.length).toEqual(1187)
+  })
+
+  scenario('returns a single post by ID', async (scenario) => {
+    const record = await post({ id: scenario.post.first.id })
+
+    expect(record.title).toEqual(scenario.post.first.title)
   })
 })
