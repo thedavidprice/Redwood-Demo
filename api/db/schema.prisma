@@ -1,7 +1,7 @@
 datasource DS {
   // optionally set multiple providers
   // example: provider = ["sqlite", "postgresql"]
-  provider = "sqlite"
+  provider = ["sqlite", "postgresql"]
   url      = env("DATABASE_URL")
 }
 
@@ -11,11 +11,11 @@ generator client {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   title     String
   body      String
   comments  Comment[]
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 }
 
 model Contact {
