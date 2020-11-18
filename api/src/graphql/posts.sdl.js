@@ -3,6 +3,7 @@ export const schema = gql`
     id: Int!
     title: String!
     body: String!
+    comments: [Comment]!
     createdAt: DateTime!
   }
 
