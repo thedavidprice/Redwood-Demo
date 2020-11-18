@@ -70,6 +70,10 @@ const Post = ({ post }) => {
               <td>{post.title}</td>
             </tr>
             <tr>
+              <th>Author</th>
+              <td>{post.author}</td>
+            </tr>
+            <tr>
               <th>Body</th>
               <td>{post.body}</td>
             </tr>
