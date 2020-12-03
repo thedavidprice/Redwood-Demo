@@ -63,6 +63,7 @@ const PostsList = ({ posts }) => {
           <tr>
             <th>Id</th>
             <th>Title</th>
+            <th>Author</th>
             <th>Body</th>
             <th>Created at</th>
             <th>&nbsp;</th>
@@ -73,6 +74,7 @@ const PostsList = ({ posts }) => {
             <tr key={post.id}>
               <td>{truncate(post.id)}</td>
               <td>{truncate(post.title)}</td>
+              <td>{truncate(post.author)}</td>
               <td>{truncate(post.body)}</td>
               <td>{timeTag(post.createdAt)}</td>
               <td>
