@@ -39,22 +39,6 @@ const PostForm = (props) => {
         <FieldError name="title" className="rw-field-error" />
 
         <Label
-          name="author"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Author
-        </Label>
-        <TextField
-          name="author"
-          defaultValue={props.post?.author}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-        <FieldError name="author" className="rw-field-error" />
-
-        <Label
           name="body"
           className="rw-label"
           errorClassName="rw-label rw-label-error"

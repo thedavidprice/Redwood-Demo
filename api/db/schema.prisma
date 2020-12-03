@@ -13,7 +13,6 @@ generator client {
 model Post {
   id        Int       @id @default(autoincrement())
   title     String
-  author    String    @default("Anonymous")
   body      String
   comments  Comment[]
   createdAt DateTime  @default(now())

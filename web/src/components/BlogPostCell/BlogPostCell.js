@@ -5,7 +5,6 @@ export const QUERY = gql`
     post(id: $id) {
       id
       title
-      author
       body
       createdAt
     }
